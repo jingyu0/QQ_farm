@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>QQ农场</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	</head>
+	<body>
+		<div class="main">
+			<div class="table_jz">
+				<table>
+					<tr>
+						<td><img src="img/none.png" id=0 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=1 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=2 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=3 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=4 onclick="changePic(this.id)"/></td>
+					</tr>
+					<tr>
+						<td><img src="img/none.png" id=5 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=6 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=7 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=8 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=9 onclick="changePic(this.id)"/></td>
+					</tr>
+					<tr>
+						<td><img src="img/none.png" id=10 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=11 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=12 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=13 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=14 onclick="changePic(this.id)"/></td>
+					</tr>
+					<tr>
+						<td><img src="img/none.png" id=15 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=16 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=17 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=18 onclick="changePic(this.id)"/></td>
+						<td><img src="img/none.png" id=19 onclick="changePic(this.id)"/></td>
+					</tr>
+					<tr>
+						<input type="button" value="播种" onclick="changeStatu(this.value)"/>
+						<input type="button" value="采摘" onclick="changeStatu(this.value)"/>
+						<input type="button" value="翻地" onclick="changeStatu(this.value)"/>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	
+	var statu=1; //默认为播种状态
+	//var imgs=['img/none.png','img/seed.png','img/bud.png','img/flower.gif','img/harvest.png']
+	var allLand=new Array(20);
+	for(var i=0;i<allLand.length;i++){
+		allLand[i]=new Array(3);
+		allLand[i][0]=1; //土地的当前状态
+		allLand[i][1]=0; //表示这块土地的生长周期，从发芽到成熟
+	}
+	
+	//改变图片
+	function changePic(id){
+		//加入状态控制
+		if(statu==1){
+			if(allLand[id][0]==1){
+				//设置播种状态的土地
+				document.getElementById(id).src="img/seed.png";
+				//修改这块地的状态
+				allLand[id][0]= 2;
+				//设置这块地的生长周期
+				allLand[id][1]= 20;
+				//长大
+				grow(id);
+			}
+			else{
+				alert('土地非空闲状态，不能播种！');
+			}
+		}
+		if(statu==4){//采摘
+			if(allLand[id][0]==4){
+				document.getElementById(id).src="img/harvest.png";
+				allLand[id][0]=5;
+			}else{
+				alert("植物没有成熟，不能采摘！")
+			}
+		}
+		if(statu==5){//铲除
+			if(allLand[id][0]==5){
+				document.getElementById(id).src="img/none.png";
+				allLand[id][0]=1;
+			}else{
+				alert("植物非采摘状态，不能铲除")
+			}
+		}
+//		document.getElementById(id).src='img/seed.png';
+//		grow(id);
+		
+	}
+	
+	//timer表示一块地的生长时间
+	//var timer=20;
+	
+	function grow(id){
+		
+//		console.log(id);
+//		console.log(allLand[id][0]);
+//		console.log(allLand[id][1]);
+		//没有成熟，继续生长
+		if(allLand[id][1]!=0){
+			if(allLand[id][1]>=10){
+				//发芽状态
+				console.log('准备发芽');
+			}else{
+				console.log('准备结果');
+				//将图片设置为发芽状态
+				document.getElementById(id).src="img/bud.png";
+			}
+			
+			allLand[id][1]--; 
+			//时间减少，表示快成熟了
+			setTimeout("grow("+id+")",1000);
+		}else{
+			console.log('已经成熟');
+			document.getElementById(id).src="img/flower.gif";
+			allLand[id][0]=4;	
+		}
+//		timer--;
+//		
+//		console.log("timer:"+timer);
+////		console.log("state:"+state);
+////		console.log("imgId:"+imgId);
+////		var obj=document.getElementById(imgId);
+////		console.log(obj);
+//		
+//		if(timer==10){
+//			document.getElementById(id).src='img/bud.png';	
+//		}
+//		if(timer==0){
+//			document.getElementById(id).src='img/flower.gif';
+////			window.clearTimeout(theTime);
+//			return;
+//		}
+//		
+//		setTimeout("grow("+id+")",1000);
+	}
+	
+	function changeStatu(sta){
+		if(sta=='播种'){
+			statu=1;
+		}
+		if(sta=='发芽'){
+			statu=2;
+		}
+		if(sta=='结果'){
+			statu=3;
+		}
+		if(sta=='采摘'){
+			statu=4;
+		}
+		if(sta=='翻地'){
+			statu=5;
+		}
+	}
+	
+</script>
