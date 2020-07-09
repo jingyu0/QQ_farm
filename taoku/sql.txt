@@ -1,0 +1,32 @@
+
+
+-- 建立商品表
+create table product
+(
+	pid int primary key auto_increment,
+	pname varchar(40), -- 商品名称
+	pprice int,	-- 商品价格
+	ppricezk int, -- 折扣价
+	pimg varchar(50), -- 商品图片
+	pdes varchar(200), -- 商品描述
+	pcata int -- 商品分类
+);
+
+ update product set pimg='products/1/cs10001.jpg' where pimg='images/cs10001.jpg'
+
+select * from product;
+
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+insert into product values(null, '西瓜子', 15, 5, 'images/cs10001.jpg', '好香', 0);
+
+
