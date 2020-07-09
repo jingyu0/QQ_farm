@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+	</head>
+	<body>
+		<h3>用户注册</h3>
+		
+		<form action="01.html" method="post">
+			
+			账号：<input type="text" name="txtName" /><br>
+			密码：<input type="password" name="txtPwd" /><br>
+			确认密码：<input type="password" name="txtPwdConfirm" /><br>
+			手机号码：<input type="text" name="txtPhone" /><br>
+			性别：<input type="radio" name="rdSex" value="male"/>男
+				<input type="radio" name="rdSex" value="female"/>女<br>
+			爱好：<input type="checkbox" name="chkLoves" value="sing"/>唱歌
+				<input type="checkbox" name="chkLoves" value="dance"/>跳舞
+				<input type="checkbox" name="chkLoves" value="dp"/>打牌
+				<input type="checkbox" name="chkLoves" value="db"/>赌博
+				<br>
+			籍贯：
+				<select name="selJg">
+					<option value="">湖南</option>
+					<option value="">湖北</option>
+					<option value="">陕西</option>
+				</select>省
+				<select name="selCity">
+					<option value="">西安</option>
+					<option value="">北京</option>
+					<option value="">长沙</option>
+				</select>省
+				<br />
+			照片：<input type="file" /><br />
+			备注：<textarea></textarea><br>
+			<input type="submit" value="注册"/>
+			<input type="reset" value="重置"/>
+			
+		</form>
+		
+	</body>
+</html>
