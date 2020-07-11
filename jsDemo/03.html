@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>sjddks</title>
+	</head>
+	<body>
+		
+		籍贯：<select id="selPro" onchange="findCity()">
+			<option value="hn">湖南</option>
+			<option value="hb">湖北</option>
+			<option value="gd">广东</option>
+		</select>省
+		<select id="selCity">
+		</select>市区
+		
+		
+	</body>
+</html>
+
+<script>
+	
+	var gdCity=['广州','深圳','东莞','珠海'];
+	var hnCity=['长沙','常德','湘潭','株洲'];
+	var hbCity=['武汉','荆州','襄阳','黄冈'];
+		
+	
+	
+	
+	
+	function findCity(){
+		//获取选中的省
+		var city;
+		 var pro = document.getElementById("selPro").value;
+		 var myCity = document.getElementById("selCity");
+		 if(pro=='hn'){
+		 	city = hnCity;
+		 }
+		 if(pro=='hb'){
+		 	city = hbCity;
+		 }
+		if(pro=='gd'){
+			city = gdCity;
+		}
+		
+		//清空下拉框
+		myCity.innerHTML='';
+		
+		for(var i=0; i<city.length; i++){
+			//动态的创建一个option
+			var op = new Option(city[i],city[i]);
+			//把这个Option放到city的下拉框中
+			myCity.appendChild(op);
+		}
+	}
+	
+	findCity();
+		
+	
+</script>

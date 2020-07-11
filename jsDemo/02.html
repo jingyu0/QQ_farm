@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		姓名：<input type="text" id="txt1" name="mytxt" /><br>
+		<input type="button" value="获取元素" onclick="findBtn()" />
+		<input type="button" value="修改元素" onclick="updateBtn()" />
+	
+	</body>
+</html>
+
+<script>
+	
+	function updateBtn(){
+		var txt =document.getElementById("txt1");
+		txt.type="button";
+		txt.value="你点我做什么";
+		txt.onclick=function(){
+			alert('hehe');
+		};
+	}
+	
+	function findBtn(){
+//		var txt =document.getElementById("txt1");
+//		var txts = document.getElementsByName("mytxt");
+//		var txt =txts[0];
+		
+		var txts = document.getElementsByTagName("input");
+		var txt =txts[1];
+		console.log(txt.type);
+		console.log(txt.id);
+		console.log(txt.value);
+		
+	}
+	
+</script>
