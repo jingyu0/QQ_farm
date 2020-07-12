@@ -1,0 +1,160 @@
+//注册、登录页面
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row" style="background: url(img/regist_bg.jpg) no-repeat;background-size:100% 500px;height:500px;">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-10">
+            <div style="width:800px;border: solid #F7F7F7;padding: 20px 0 20px 30px;
+						 border-radius: 5px;margin-top: 60px; background: #FFFFFF;">
+                <form action="index.html" method="post" onsubmit="return checkForm()">
+                <font>会员注册</font>
+                USER REGISTER
+                <div>&nbsp;</div>
+                <div class="row">
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">用户名：</label>
+                        <input type="text" name="txtName" placeholder="请输入账号" id="txtUserName" onchange="checkUserName()" />
+                        <span id="errUserName"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">密码：</label>
+                        <input type="password" name="txtPwd" placeholder="请输入密码" id="txtPasswd" onchange="checkPasswd()" />
+                        <span id="errPasswd"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">确认密码：</label>
+                        <input type="password" name="txtName"  placeholder="请输入确认密码" id="txtVerifyPasswd" onchange="checkVerifyPasswd()" />
+                        <span id="errVerifyPasswd"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">Email：</label>
+                        <input type="text" name="txtName"  placeholder="请输入Email" id="txtEmail" onchange="checkEmail()" />
+                        <span id="errEmail"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">姓名：</label>
+                        <input type="text" name="txtName"  placeholder="请输入姓名" id="txtName"  onchange="checkName()" />
+                        <span id="errName"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">身份证：</label>
+                        <input type="text" name="txtName"  placeholder="请输入省份证" id="txtIdentity"  onchange="checkIdentity()" />
+                        <span id="errIdentity"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-md-2 control-label">性别：</label>
+                        <input type="radio" name="rdSex"  value="male" />男
+                        <input type="radio" name="rdSex"  value="female" />女
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-2"></div>
+                        <input type="submit"  value="注册" class="btn btn-danger" />
+                    </div>
+
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var canSubmit = 0;
+
+    function checkUserName() {
+        var userName = document.getElementById("txtUserName").value;
+        errUserName.innerHTML="";
+        if(userName.length < 6) {
+
+            errUserName.innerHTML="<font color='red'>账号格式不正确</font>"
+        }
+        ++canSubmit;
+    }
+
+    function checkPasswd() {
+        var userPasswd = document.getElementById("txtPasswd").value;
+        errPasswd.innerHTML="";
+        if(userPasswd.length < 6  || userPasswd.length > 15) {
+
+            errPasswd.innerHTML="<font color='red'>密码6-15位</font>"
+        }
+        ++canSubmit;
+    }
+
+    function checkVerifyPasswd() {
+        var userVerifyPasswd = document.getElementById("txtVerifyPasswd").value;
+        var userPasswd = document.getElementById("txtPasswd").value;
+        errVerifyPasswd.innerHTML="";
+
+        if(userVerifyPasswd != userPasswd) {
+            errVerifyPasswd.innerHTML="<font color='red'>密码不一致</font>"
+        }
+        ++canSubmit;
+    }
+
+    function checkEmail() {
+        var userEmail = document.getElementById("txtEmail").value;
+        errEmail.innerHTML="";
+
+        var expEmail = /^\w{1,}@\w{2,}[.]\w{2,}$/;
+        if(!expEmail.test(userEmail)) {
+
+            errEmail.innerHTML="<font color='red'>邮件格式不正确</font>"
+        }
+        ++canSubmit;
+    }
+
+    function checkName() {
+        var userName = document.getElementById("txtName").value;
+        errName.innerHTML="";
+        if(userName.length < 2) {
+            errName.innerHTML="<font color='red'>姓名不正确</font>"
+        }
+        ++canSubmit;
+    }
+
+    function checkIdentity() {
+        var userIdentity = document.getElementById("txtIdentity").value;
+        errIdentity.innerHTML="";
+        var expIdentity = /(^\d{15}$)|bai(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        if(!expIdentity.test(userIdentity)) {
+
+            errIdentity.innerHTML="<font color='red'>身份证格式不正确</font>"
+        }
+        ++canSubmit;
+    }
+    function checkForm() {
+        console.log(canSubmit)
+        if(canSubmit > 6) {
+            return true;
+        }
+        checkUserName()
+        checkPasswd()
+        checkIdentity()
+        return false;
+    }
+
+
+</script>
+
+</body>
+</html>
