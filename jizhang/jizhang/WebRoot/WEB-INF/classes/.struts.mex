@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="com" location="0,0" size="0,0">
+    <action name="loginuser" location="0,0" size="0,0">
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="login.jsp" />
+      </result>
+      <result name="adminfail">
+        <resourceEdge source="adminfail" routing="0" target="adminlogin.jsp" />
+      </result>
+      <result name="register">
+        <resourceEdge source="register" routing="0" target="register.jsp" />
+      </result>
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="index.jsp" />
+      </result>
+    </action>
+    <action name="admin" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="admin_list.jsp" />
+      </result>
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="admin_add.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="admin_edit.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="admin_view.jsp" />
+      </result>
+      <result name="my">
+        <resourceEdge source="my" routing="0" target="my_edit.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="fail.jsp" />
+      </result>
+    </action>
+    <action name="stu" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="stu_list.jsp" />
+      </result>
+      <result name="login">
+        <resourceEdge source="login" routing="0" target="login.jsp" />
+      </result>
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="stu_add.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="stu_edit.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="stu_view.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="fail.jsp" />
+      </result>
+      <result name="editsc">
+        <resourceEdge source="editsc" routing="0" target="stu_edit.jsp" />
+      </result>
+    </action>
+    <action name="zhang" location="0,0" size="0,0">
+      <result name="list">
+        <resourceEdge source="list" routing="0" target="zhang_list.jsp" />
+      </result>
+      <result name="add">
+        <resourceEdge source="add" routing="0" target="zhang_add.jsp" />
+      </result>
+      <result name="edit">
+        <resourceEdge source="edit" routing="0" target="zhang_edit.jsp" />
+      </result>
+      <result name="view">
+        <resourceEdge source="view" routing="0" target="zhang_view.jsp" />
+      </result>
+      <result name="fail">
+        <resourceEdge source="fail" routing="0" target="fail.jsp" />
+      </result>
+      <result name="qylist">
+        <resourceEdge source="qylist" routing="0" target="zhang_ylist.jsp" />
+      </result>
+      <result name="qnlist">
+        <resourceEdge source="qnlist" routing="0" target="zhang_nlist.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="login.jsp" path="/login.jsp" location="0,0" size="0,0" />
+  <webResource name="register.jsp" path="/register.jsp" location="0,0" size="0,0" />
+  <webResource name="index.jsp" path="/index.jsp" location="0,0" size="0,0" />
+  <webResource name="admin_list.jsp" path="/admin/admin_list.jsp" location="0,0" size="0,0" />
+  <webResource name="admin_add.jsp" path="/admin/admin_add.jsp" location="0,0" size="0,0" />
+  <webResource name="admin_edit.jsp" path="/admin/admin_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="admin_view.jsp" path="/admin/admin_view.jsp" location="0,0" size="0,0" />
+  <webResource name="my_edit.jsp" path="/admin/my_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="fail.jsp" path="/fail.jsp" location="0,0" size="0,0" />
+  <webResource name="stu_list.jsp" path="/stu/stu_list.jsp" location="0,0" size="0,0" />
+  <webResource name="stu_add.jsp" path="/stu/stu_add.jsp" location="0,0" size="0,0" />
+  <webResource name="stu_edit.jsp" path="/stu/stu_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="stu_view.jsp" path="/stu/stu_view.jsp" location="0,0" size="0,0" />
+  <webResource name="zhang_list.jsp" path="/zhang/zhang_list.jsp" location="0,0" size="0,0" />
+  <webResource name="zhang_add.jsp" path="/zhang/zhang_add.jsp" location="0,0" size="0,0" />
+  <webResource name="zhang_edit.jsp" path="/zhang/zhang_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="zhang_view.jsp" path="/zhang/zhang_view.jsp" location="0,0" size="0,0" />
+  <webResource name="tong_list.jsp" path="/tong/tong_list.jsp" location="0,0" size="0,0" />
+  <webResource name="tong_add.jsp" path="/tong/tong_add.jsp" location="0,0" size="0,0" />
+  <webResource name="tong_edit.jsp" path="/tong/tong_edit.jsp" location="0,0" size="0,0" />
+  <webResource name="tong_view.jsp" path="/tong/tong_view.jsp" location="0,0" size="0,0" />
+  <webResource name="zhang_ylist.jsp" path="/zhang/zhang_ylist.jsp" location="0,0" size="0,0" />
+  <webResource name="zhang_nlist.jsp" path="/zhang/zhang_nlist.jsp" location="0,0" size="0,0" />
+  <webResource name="adminlogin.jsp" path="/adminlogin.jsp" location="0,0" size="0,0" />
+</Struts2Diagram>
+
